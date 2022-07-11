@@ -17,6 +17,12 @@ export const Header = styled.div`
     font-size: 2em;
     font-weight: bold;
   }
+  @media (max-width: 600px) {
+    padding: 0 10px;
+    a {
+      margin: 0 auto;
+    }
+  }
 `
 
 export const Page = styled.div`
@@ -31,10 +37,23 @@ export const Top = styled.div`
     height: 400px;
     border-radius: 20px;
   }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    padding: 0px;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 240px;
+      border-radius: 0px;
+    }
+  }
 `
 
 export const Bottom = styled.div`
   padding: 20px 100px;
+  @media (max-width: 600px) {
+    padding: 20px;
+  }
 `
 
 export const TopInformation = styled.div`
@@ -65,7 +84,13 @@ export const RecipeDetailStuff = styled.h1`
     font-size: 18px;
     color: #666;
   }
-`
+  @media (max-width: 600px) {
+    padding: 0 30px;
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+    align-content: space-between;  
+  }`
 
 export const Ingredients = styled.div`
   margin-top: 40px;
@@ -78,6 +103,15 @@ export const Ingredients = styled.div`
     margin-top: 10px;
     text-align: center;
   }
+  @media (max-width: 600px) {
+    width: 100%;
+    text-align: center;
+    p {
+      text-align: left;
+      padding-left:10px;
+    }
+  }
+
 `
 
 export const Description = styled.h4`
@@ -85,6 +119,9 @@ export const Description = styled.h4`
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
+  @media (max-width: 600px) {
+    text-align: center;
+  }
 `
 
 export const DescriptionText = styled.p`

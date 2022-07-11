@@ -28,8 +28,11 @@ const Home = () => {
         <Styles.Recommendations>
           {app.recommendations.map((recommendation, index) => {
             return (
-              <div data-testid={`recommendation-${index}`}>
-                <Link to="/detail" key={`recommendation_${index}`}>
+              <div
+                data-testid={`recommendation-${index}`}
+                key={`recommendation_${index}`}
+              >
+                <Link to="/detail">
                   <Styles.RecommendedImage
                     src={recommendation?.photo || DEFAULT_IMAGE}
                     alt=""
