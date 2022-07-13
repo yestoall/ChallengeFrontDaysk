@@ -1,10 +1,10 @@
-import { useEffect } from "react"
-import { Link, useLocation, useNavigate } from "react-router-dom"
-
 import { useAppContext } from "../../context/appContext"
-import * as Styles from "./DetailStyles"
-
-const DEFAULT_IMAGE = "http://via.placeholder.com/640x360"
+import { useEffect } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
+import { Page } from "./DetailStyles"
+import Loading from "../../components/Loading"
+import NavigationBar from "../../components/NavigationBar"
+import RecipeDetails from "../../components/RecipeDetails"
 
 const Detail = () => {
   const app = useAppContext()
@@ -20,39 +20,14 @@ const Detail = () => {
     }
   }, [location])
 
-  if (!recipe) return <div>Loading...</div>
+  if (!recipe) return <Loading />
 
   return (
     <div>
-      <Styles.Header>
-        <Link to="/">Food recipes</Link>
-      </Styles.Header>
-      <Styles.Page>
-        <Styles.Top>
-          <img src={recipe?.photo || DEFAULT_IMAGE} />
-          <Styles.TopInformation>
-            <Styles.RecipeDetailCategory>
-              {recipe.categoryName}
-            </Styles.RecipeDetailCategory>
-            <Styles.RecipeDetailName>{recipe.name}</Styles.RecipeDetailName>
-            <Styles.RecipeDetailStuff>
-              <p>{recipe.duration} minutes</p>
-              <p>{recipe.complexity}</p>
-              <p>{recipe.people} people</p>
-            </Styles.RecipeDetailStuff>
-            <Styles.Ingredients>
-              <h4>Ingredients</h4>
-              {recipe.ingredients?.split("\r\n").map((ingredient, index) => (
-                <p key={index}>{ingredient}</p>
-              ))}
-            </Styles.Ingredients>
-          </Styles.TopInformation>
-        </Styles.Top>
-        <Styles.Bottom>
-          <Styles.Description>Info</Styles.Description>
-          <Styles.DescriptionText>{recipe.description}</Styles.DescriptionText>
-        </Styles.Bottom>
-      </Styles.Page>
+      <NavigationBar />
+      <Page>
+        <RecipeDetails recipe={recipe} />
+      </Page>
     </div>
   )
 }

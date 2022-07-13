@@ -7,13 +7,16 @@ import {
   useContext,
   ReactNode,
 } from "react"
+
+import {
+  API_GET_RECIPES,
+  API_GET_RECOMMENDATIONS,
+} from "../configuration/APIurls"
 import { RecipeType } from "../types/recipes"
 
-const API_GET_RECIPES = "https://virated-api.herokuapp.com/recipes"
-const API_GET_RECOMMENDATIONS =
-  "https://virated-api.herokuapp.com/recipes?recommended=1"
+import APIcall from "../lib/APIcall"
 
-type appContextType = {
+interface appContextType {
   isLoading: boolean
   error: string
   recipes: RecipeType[]
@@ -55,34 +58,22 @@ export function AppProvider({ children }: Props) {
     const loadRecipies = async () => {
       // recipes API call
       {
-        const data = await APIcall(API_GET_RECIPES)
-        if (data) setRecipes(data)
+        const { error, errorMessage, data } = await APIcall(API_GET_RECIPES)
+        if (error) setError(errorMessage)
+        else if (data) setRecipes(data)
       }
       // recommendations API call
       {
-        const data = await APIcall(API_GET_RECOMMENDATIONS)
-        if (data) setRecommendations(data)
+        const { error, errorMessage, data } = await APIcall(
+          API_GET_RECOMMENDATIONS
+        )
+        if (error) setError(errorMessage)
+        else if (data) setRecommendations(data)
       }
       setIsLoading(false)
     }
     loadRecipies()
   }, [])
-
-  const APIcall = async (url) => {
-    try {
-      const resp = await fetch(url)
-      if (resp.status === 200) {
-        const { data } = await resp.json()
-        return data
-      } else {
-        setError(`ERROR loading ${url}`)
-        return false
-      }
-    } catch (error) {
-      setError(`ERROR loading ${url}`)
-      return false
-    }
-  }
 
   return (
     <AppContext.Provider
