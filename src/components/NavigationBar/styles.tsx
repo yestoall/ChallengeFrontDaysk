@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { PRIMARY_COLOR, MOBILE_BREAKPOINT } from "../configuration/theme"
+import { PRIMARY_COLOR, MOBILE_BREAKPOINT } from "config/theme"
 
 export const Header = styled.div`
   background-color: ${PRIMARY_COLOR};

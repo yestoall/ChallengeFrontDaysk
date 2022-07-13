@@ -1,8 +1,8 @@
-import { useAppContext } from "../context/appContext"
+import { useAppContext } from "config/context/appContext"
+import { RecipeType } from "config/types/recipes"
 import { Link } from "react-router-dom"
-import { RecipeType } from "../types/recipes"
-import { Recommendation } from "./RecommendationCardStyle"
-import RecipeImage from "./RecipeImage"
+import RecipeImage from "../RecipeImage"
+import { Recommendation } from "./styles"
 
 interface RecommendationCardProps {
   recipe: RecipeType

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { MOBILE_BREAKPOINT } from "../configuration/theme"
+import { MOBILE_BREAKPOINT } from "config/theme"
 
 export const List = styled.div`
   display: flex;

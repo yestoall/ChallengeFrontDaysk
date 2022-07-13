@@ -1,14 +1,7 @@
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/home/Home";
-import Detail from "./pages/recipe/Detail";
+import AppRoutes from "config/routes"
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="detail" element={<Detail />} />
-    </Routes>
-  );
+  return <AppRoutes />
 }
 
-export default App;
+export default App

@@ -1,16 +1,16 @@
-import { useAppContext } from "../../context/appContext"
+import { useAppContext } from "config/context/appContext"
 import { useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
-import { Page } from "./DetailStyles"
-import Loading from "../../components/Loading"
-import NavigationBar from "../../components/NavigationBar"
-import RecipeDetails from "../../components/RecipeDetails"
+import Loading from "components/Loading"
+import NavigationBar from "components/NavigationBar"
+import RecipeDetails from "components/RecipeDetails"
+import { Page } from "./styles"
 
 const Detail = () => {
-  const app = useAppContext()
-  const recipe = app?.selected
   const location = useLocation()
   const navigate = useNavigate()
+  const app = useAppContext()
+  const recipe = app?.selected
 
   useEffect(() => {
     if (!recipe) {
@@ -18,7 +18,7 @@ const Detail = () => {
     } else {
       window.scrollTo(0, 0)
     }
-  }, [location])
+  }, [location]) // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!recipe) return <Loading />
 

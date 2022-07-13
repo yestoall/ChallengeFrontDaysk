@@ -1,6 +1,6 @@
-import { RecipeType } from "../types/recipes"
-import { List } from "./RecommendationsListStyle"
-import RecommendationCard from "./RecommendationCard"
+import { RecipeType } from "config/types/recipes"
+import RecommendationCard from "../RecommendationCard"
+import { List } from "./styles"
 
 interface RecommendationsListProps {
   recipes: RecipeType[]

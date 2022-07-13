@@ -8,13 +8,10 @@ import {
   ReactNode,
 } from "react"
 
-import {
-  API_GET_RECIPES,
-  API_GET_RECOMMENDATIONS,
-} from "../configuration/APIurls"
+import { API_GET_RECIPES, API_GET_RECOMMENDATIONS } from "../APIurls"
 import { RecipeType } from "../types/recipes"
 
-import APIcall from "../lib/APIcall"
+import APIcall from "../../lib/APIcall"
 
 interface appContextType {
   isLoading: boolean

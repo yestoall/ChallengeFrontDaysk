@@ -1,6 +1,6 @@
-import { RecipeType } from "../types/recipes"
-import { List } from "./RecipesListStyles"
-import RecipeCard from "./RecipeCard"
+import { RecipeType } from "config/types/recipes"
+import RecipeCard from "components/RecipeCard"
+import { List } from "./styles"
 
 interface RecipeListProps {
   recipes: RecipeType[]

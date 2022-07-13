@@ -1,7 +1,7 @@
-import { useAppContext } from "../context/appContext"
+import { useAppContext } from "config/context/appContext"
 import { Link } from "react-router-dom"
-import { RecipeType } from "../types/recipes"
-import RecipeImage from "./RecipeImage"
+import { RecipeType } from "config/types/recipes"
+import RecipeImage from "components/RecipeImage"
 import {
   Recipe,
   RecipeInfo,
@@ -9,7 +9,7 @@ import {
   RecipeName,
   RecipeStuff,
   RecipeButton,
-} from "./RecipeCardStyles"
+} from "./styles"
 
 interface RecipeCardProps {
   recipe: RecipeType

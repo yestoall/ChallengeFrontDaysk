@@ -1,10 +1,6 @@
 import styled from "styled-components"
 
-import {
-  PRIMARY_COLOR,
-  SECONDARY_COLOR,
-  MOBILE_BREAKPOINT,
-} from "../configuration/theme"
+import { PRIMARY_COLOR, SECONDARY_COLOR, MOBILE_BREAKPOINT } from "config/theme"
 
 export const Top = styled.div`
   display: flex;

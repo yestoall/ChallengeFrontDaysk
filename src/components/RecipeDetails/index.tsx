@@ -1,5 +1,5 @@
-import { RecipeType } from "../types/recipes"
-import RecipeImage from "./RecipeImage"
+import { RecipeType } from "config/types/recipes"
+import RecipeImage from "components/RecipeImage"
 import {
   Top,
   Bottom,
@@ -10,7 +10,7 @@ import {
   Ingredients,
   Description,
   DescriptionText,
-} from "./RecipeDetailsStyles"
+} from "./styles"
 
 interface RecipeCardProps {
   recipe: RecipeType

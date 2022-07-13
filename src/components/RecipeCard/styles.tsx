@@ -5,7 +5,7 @@ import {
   PRIMARY_COLOR,
   SECONDARY_COLOR,
   MOBILE_BREAKPOINT,
-} from "../configuration/theme"
+} from "config/theme"
 
 export const Recipe = styled.div`
   display: flex;

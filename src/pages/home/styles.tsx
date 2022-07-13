@@ -1,9 +1,5 @@
 import styled from "styled-components"
-import {
-  PAGE_BACKGROUND,
-  PRIMARY_COLOR,
-  MOBILE_BREAKPOINT,
-} from "../../configuration/theme"
+import { PAGE_BACKGROUND, PRIMARY_COLOR, MOBILE_BREAKPOINT } from "config/theme"
 
 export const Page = styled.div`
   background-color: ${PAGE_BACKGROUND};

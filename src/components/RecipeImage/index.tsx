@@ -1,4 +1,4 @@
-import { DEFAULT_PHOTO_IMAGE } from "../configuration/APIurls"
+import { DEFAULT_PHOTO_IMAGE } from "config/APIurls"
 
 interface RecipeImageProps {
   photo?: string
