@@ -10,9 +10,9 @@ const RecommendationsList = ({
   recipes,
 }: RecommendationsListProps): JSX.Element => {
   return (
-    <List data-testid="recommendations">
+    <List>
       {recipes.map((recipe, index) => (
-        <RecommendationCard recipe={recipe} key={`recipe_${index}`} />
+        <RecommendationCard key={`recipe_${index}`} recipe={recipe} />
       ))}
     </List>
   )

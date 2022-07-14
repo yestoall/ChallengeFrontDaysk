@@ -8,7 +8,7 @@ interface RecipeListProps {
 
 const RecipeList = ({ recipes }: RecipeListProps): JSX.Element => {
   return (
-    <List data-testid="recipes">
+    <List>
       {recipes.map((recipe, index) => (
         <RecipeCard recipe={recipe} key={`recipe_${index}`} />
       ))}
